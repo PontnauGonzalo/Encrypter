@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="Webside Icon" type="png" href="img/encrypter-logo-page.png">   <!--logo en la pestaña de google-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Text Encryptor</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="encrypter">
+                <textarea name="text" class="text" id="text" cols="30" rows="10" placeholder="Write a message here.."></textarea>
+        
+            <div class="terms">
+                <p>Only lowercase letters</p>
+            </div>
+            <div class="button">
+                <button class="btn-encrypt" type="button" onclick="encryptor()">Encrypt</button> <!--boton encriptar-->
+                <input type="button" class="btn-decrypt" value="decrypt" onclick="decrypt()">  <!--lo mismo pero con input-->
+            </div>
+            </div>
+            <div class="encrypter">
+                <img src="" alt="" id="muñeco">
+                <div class="encrypter-mesagge" id="encrypter-mesagge">
+                    <h2 id="Title-message">No message found</h2>
+                    <p id="paragraph">Enter the text you want to encrypt or decrypt</p>
+                    <textarea name="message" class="message" id="message" cols="30" rows="10"></textarea>
+                </div>    
+            </div>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

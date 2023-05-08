@@ -1,0 +1,124 @@
+/*Pallette of dark mode colors
+Background: #1E1E1E
+Primary: #0085ff 
+Accent: #e0ffff
+Text: #FFFFFF
+*/
+
+/* Pallette of light mode colors
+Background  #E6F2FF
+Primary:  #94c8fc
+Accent:  #00FFFF
+Text:  #333333  */
+
+* {   /*cambiar seleccior universal*/
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    width: 100vw;  /* vw=ancho de la pantalla */
+    height: 100vh; /* vh=alto de la pantalla */
+    background: #07ff5308;
+}
+.text {
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top: 20%;
+    border: none;
+    font-family: monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 150%;
+    background-color: #ffffff;
+}
+.text::placeholder {
+    color: #33333367;
+}
+.text:focus, .text:active {
+    border: none;
+    outline: none;
+}
+.terms p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 80%
+}
+.terms p {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #333333;
+    opacity: 0.8;
+    order: 1;
+    flex-grow: 0;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 85%;
+}
+.btn-encrypt {
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    gap: 8px;
+    width: 25%;
+    background-color: #94c8fc;
+    border-radius: 24px;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #333333;
+}
+.btn-decrypt {
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    gap: 8px;
+    width: 25%;
+    background-color: #94c8fc5b;
+    border-color: #333333;
+    border-radius: 24px;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #333333;
+}
+.btn-decrypt:hover,
+.btn-encrypt:hover {
+    margin: 0.3%;
+    width: 24.5%;
+    padding: 1.8%;
+}
+
+.encrypter {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    left: 60%;
+    top: 5%;
+    background: #fff;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
