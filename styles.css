@@ -19,30 +19,39 @@ Text:  #333333  */
     position: relative;
     width: 100vw;  /* vw=ancho de la pantalla */
     height: 100vh; /* vh=alto de la pantalla */
-    background: #07ff5308;
+    background: #07ff530a;
 }
 .text {
     position: absolute;
     width: 42%;
     height: 60%;
     left: 12%;
-    top: 20%;
+    top: 12%;
     border: none;
     font-family: monospace;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 20px;
     line-height: 150%;
-    background-color: #ffffff;
+    background-color: #d4ebfbb3;
+    box-shadow: 0px 0px 20px 4px rgb(148 200 252);
+    border-radius: 10px;
+}
+textarea { /*para que sea estático y no pueda ser redimensionado por el usuario*/
+    resize: none;
 }
 .text::placeholder {
-    color: #33333367;
+    color: #3333333b;
+}
+.text:hover {
+  transition: 0.9s;
+  box-shadow: 0px 0px 20px 4px rgb(103 182 220);
 }
 .text:focus, .text:active {
     border: none;
     outline: none;
 }
-.terms p {
+.terms  {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -58,21 +67,115 @@ Text:  #333333  */
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 150%;
-    color: #333333;
+    position: relative;
+    top: -50px;
+    color: #6a6a6af0;
     opacity: 0.8;
     order: 1;
     flex-grow: 0;
 }
+.mode-icon {
+    font-size: 22px;
+    border-left: transparent;
+    border-right:transparent;
+    border-bottom: transparent;
+    background-color: #69b4ff;
+    border-width: thick;
+    box-shadow: 3px -3px 4px 4px rgb(105 180 255 / 22%);
+    position: absolute;
+    right: 0;
+    margin-right: 13px;
+    margin-top: 41px;
+    height: 35px;
+    width: 49px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+    /* Modo claro */
+    body.light {
+        background-color: #d4ebfb42;
+        color: #333;
+        transition: 0.2s;
+    }
+
+    /* Modo oscuro */
+    body.dark {
+      background-color: #1E1E1E;
+      color: #fff;
+      
+    }
+  
+  /* Colores para el modo oscuro */
+  body.dark * {
+    border: transparent;
+    color: white;
+  }
+  body.light * {
+    color: #333333;
+  }
+
+  body.dark .footer {
+    color: #c7a6a6;
+  }
+  
+  body.dark .container {
+    background-color: #001824;
+  }
+  
+  body.dark .text {
+    background-color: #69b4ff;
+    box-shadow: 0px 0px 20px 11px rgb(105 180 255 / 22%);
+    border-radius: 10px;
+  }
+  
+  body.dark .text::placeholder {
+    color: #3333333b;
+  }
+  
+  body.dark .btn-encrypt {
+    background-color: #007fff;
+    color: black;
+    box-shadow: 0px 0px 20px 3px rgb(105 180 255 / 22%);
+  }
+  
+  body.dark .btn-decrypt {
+    background-color: #004891;
+    color: black;
+    box-shadow: 0px 0px 20px 1px rgb(105 180 255 / 22%);
+  }
+  
+  body.dark .encrypted {
+    background-color: #69b4ff2e;
+    box-shadow: 0px 0px 20px 4px rgb(48 143 213);
+  }
+  
+  body.dark .encrypter-mesagge h2 {
+    color: #69b4ff;
+  }
+  
+  body.dark .encrypter-mesagge p {
+    color: #69b4ff;
+  }
+  body.dark .text::placeholder {
+    color: #274158;
+  }
+  body.dark .text {
+    color: #011925;
+  }
+  body.dark footer {
+    background: #13344c;
+  }
+
 .button {
+    gap: 10px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 1% 0;
     position: absolute;
-    width: 80%;
-    left: 12%;
-    top: 85%;
+    width: 70%;
+    left: 15%;
+    top: 75%;
 }
 .btn-encrypt {
     align-items: center;
@@ -87,21 +190,27 @@ Text:  #333333  */
     line-height: 19px;
     text-align: center;
     color: #333333;
+    cursor: pointer;
 }
 .btn-decrypt {
-    align-items: center;
-    justify-content: center;
-    padding: 2%;
-    gap: 8px;
-    width: 25%;
     background-color: #94c8fc5b;
     border-color: #333333;
-    border-radius: 24px;
     font-family: monospace;
+    color: #333333;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2%;
+    gap: 8%;
+    width: 25%;
+    border-radius: 24px;
+    font-weight: 400;
     font-size: 18px;
     line-height: 19px;
     text-align: center;
-    color: #333333;
+    cursor: pointer;
 }
 .btn-decrypt:hover,
 .btn-encrypt:hover {
@@ -110,15 +219,166 @@ Text:  #333333  */
     padding: 1.8%;
 }
 
-.encrypter {
+.encrypted {
     display: flex;
     justify-content: center;
     position: absolute;
     width: 30%;
-    height: 90%;
+    height: 75%;
     left: 60%;
-    top: 5%;
-    background: #fff;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    top: 7%;
+    background: #fff0;
+    box-shadow: -1px 0px 20px 19px rgb(218 239 249);
     border-radius: 32px;
+}
+.encrypter-mesagge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 9px;
+    position: absolute;
+    width: 150%;
+    top: 55%;
+    text-align: center;
+}
+.encrypter-mesagge h2 {
+    width: 60%;
+    font-family: monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 120%;
+    text-align: center;
+    color: #89969f;
+}
+.encrypter-mesagge p {
+    font-family: monospace;
+    font-style: normal;
+    width: 80%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    color: #a3b4bf;
+}
+.message {
+    position: relative;
+    bottom: 240px;
+}
+.encrypted img {
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    top: 20%;
+}
+footer {
+    text-align: center;
+    background-color: #69b4ff;
+    /*box-shadow: -1px 0px 20px 19px rgb(218 239 249);*/
+    position: absolute;
+    line-height: 250%;
+    width: 300px;
+    height: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    bottom: 0;
+  }
+  .Copyright {
+    font-family: monospace;
+    position: relative;
+    top: -3px;
+    right: 30px;
+  }
+  .socialmedia {
+    width: 2%;
+  }
+  .logo-linkedin {
+    width: 24px;
+    position: absolute;
+    left: 253px;
+    top: 8px;
+    border-radius: 12px;
+  }
+  .logo-github {
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 231px;
+    border-radius: 12px;
+  }
+  .logo-github:hover {
+    transition: 0.8s; 
+    box-shadow: -1px 0px 30px 19px rgb(233 249 246);
+  }
+  .logo-linkedin:hover {
+    transition: 0.8s;
+    box-shadow: -1px 0px 30px 19px rgb(233 249 246);
+  }
+  body.dark .logo-github:hover {
+    transition: 0.5s; 
+    box-shadow: -1px 0px 30px 19px rgb(0 24 36);
+  }
+  body.dark .logo-linkedin:hover {
+      transition: 0.5s; 
+      box-shadow: -1px 0px 30px 19px rgb(0 24 36);
+    }
+
+/*Responsive design*/
+@media (max-width: 57.5em) {  /*tabletas*/
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+    .encrypter {
+        width: 100%;
+    }
+    .text {
+        width: 80%;
+        height: 50%;
+        left: 10%;
+        top: 1%;
+    }
+    .terms {
+        width: 80%;
+        left: 10%;
+        top: 59%;
+    }
+    .terms p{
+        font-size: 16px;
+    }
+    .button {
+        width: 80%;
+        left: 10%;
+        top: 60.6%;
+    }
+    .btn-encrypt, .btn-decrypt {
+        width: 48%;
+        border-radius: 16px; 
+    }
+    .btn-decrypt:hover,.btn-encrypt:hover {
+        margin: 0.3%;
+        width: 47.5%;
+        padding: 1.8%;
+    }
+    .encrypted {
+        width: 80%;
+        height: 30%;
+        left: 10%;
+        top: 67%;
+    }
+    .encrypter-mesagge {
+        width: 100%;
+        top: 30%;
+    }
+    .encrypted img {
+        top: 0;
+        display: none;
+        visibility: hidden;
+    }
 }
