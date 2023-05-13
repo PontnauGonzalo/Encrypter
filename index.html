@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="Webside Icon" type="png" href="img/encrypter-logo-page.png">   <!--logo en la pestaña de google-->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Text Encryptor</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="encrypter">
-                <textarea name="text" class="text" id="text" cols="30" rows="10" placeholder="Write a message here.."></textarea>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Encryptor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+
+<body class="light">
+    <div class="container">   
+
+        <button class="mode-toggle" onclick="toggleMode()">
+            <span class="mode-icon" id="mode-icon">&#9790;</span>
+        </button>
         
+        <div class="encrypter">
+            <textarea name="text" class="text" id="text" cols="30" rows="10" placeholder="Write a message here.."></textarea>
             <div class="terms">
                 <p>Only lowercase letters</p>
             </div>
@@ -19,16 +24,28 @@
                 <button class="btn-encrypt" type="button" onclick="encryptor()">Encrypt</button> <!--boton encriptar-->
                 <input type="button" class="btn-decrypt" value="decrypt" onclick="decrypt()">  <!--lo mismo pero con input-->
             </div>
-            </div>
-            <div class="encrypter">
-                <img src="" alt="" id="muñeco">
-                <div class="encrypter-mesagge" id="encrypter-mesagge">
-                    <h2 id="Title-message">No message found</h2>
-                    <p id="paragraph">Enter the text you want to encrypt or decrypt</p>
-                    <textarea name="message" class="message" id="message" cols="30" rows="10"></textarea>
-                </div>    
-            </div>
         </div>
-    </body>
-    <script src="index.js"></script>
+        
+        <div class="encrypted">
+            <img src="img/404.PNG" alt="" id="404">
+            <div class="encrypter-mesagge" id="encrypter-mesagge">
+                <h2 id="Title-message">No message found</h2>
+                <p id="paragraph">Enter the text you want to encrypt or decrypt</p>
+            </div>    
+        </div> 
+        
+        <footer>
+            <p class="Copyright">Made by: <strong>Pontnau Gonzalo</strong></p>
+
+            <div class="socialmedia">
+                <a href="https://www.linkedin.com/in/gonzalopontnau/">
+                  <img src="img/linkedin.png" class="logo-linkedin">
+                </a>
+                <a href="https://github.com/PontnauGonzalo">
+                  <img src="img/github.png" class="logo-github">
+                </a>
+              </div>
+        </footer>
+    </div>
+</body>
 </html>
