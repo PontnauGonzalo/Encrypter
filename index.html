@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Text Encryptor</title>
+    <link rel="shortcut icon" href="img/encrypter-logo-page.png" type="image/x-icon"> 
     <link rel="stylesheet" href="styles.css">
     <script src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="light">
@@ -15,21 +18,23 @@
             <span class="mode-icon" id="mode-icon">&#9790;</span>
         </button>
         
-        <div class="encrypter">
-            <textarea name="text" class="text" id="text" cols="30" rows="10" placeholder="Write a message here.."></textarea>
+        <div class="encrypt">
+            <textarea name="text" class="text" id="text" cols="30" rows="10" placeholder="Write a message here.." style="
+            overflow-x: hidden"></textarea>
             <div class="terms">
                 <p>Only lowercase letters</p>
             </div>
             <div class="button">
-                <button class="btn-encrypt" type="button" onclick="encryptor()">Encrypt</button> <!--boton encriptar-->
-                <input type="button" class="btn-decrypt" value="decrypt" onclick="decrypt()">  <!--lo mismo pero con input-->
+                <button class="btn-encrypt" type="button" onclick="encrypt()">Encrypt</button> <!--boton encriptar-->
+                <button class="btn-decrypt" type="button" onclick="decrypt()">Decrypt</button>
+                <!--<input  class="btn-decrypt" type="button" value="decrypt" onclick="decrypt()">-->  <!--lo mismo pero con input-->
             </div>
         </div>
         
         <div class="encrypted">
-            <img src="img/404.PNG" alt="" id="404">
+            <img src="img/encryptedError.PNG" alt="" id="encryptedError">
             <div class="encrypter-mesagge" id="encrypter-mesagge">
-                <h2 id="Title-message">No message found</h2>
+                <h2 id="TitleMessage">No message found</h2>
                 <p id="paragraph">Enter the text you want to encrypt or decrypt</p>
             </div>    
         </div> 
