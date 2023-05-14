@@ -14,29 +14,55 @@ function toggleMode() {
   }
 }
 
+function encrypt() {
+  let text = document.getElementById("text").value;
+  let TitleMessage = document.getElementById("TitleMessage");
+  let paragraph = document.createElement("paragraph");
+  let encryptedError = document.getElementById("encryptedError");
 
-function encryptor() {
-    let text = document.getElementById('text').value;
-    let messageTitle = document.getElementById('messageTitle');
-    let paragraph = document.createElement('pparagraph');
-    let greatEncrypted = document.createElement('greatEncrypted');
+  let encryptedText = text
+                          .replace(/e/gi, "enter")  //replace == obtener una letra y remplazarla
+                          .replace(/i/gi, "imes")
+                          .replace(/a/gi, "ai")
+                          .replace(/o/gi, "ober")
+                          .replace(/u/gi, "ufat");
 
-    let encryptedText = text
-                            .replace(/e/gi, "enter")  //replace == obtener una letra y remplazarla
-                            .replace(/i/gi, "imes")
-                            .replace(/a/gi, "ai")
-                            .replace(/o/gi, "ober")
-                            .replace(/u/gi, "ufat");
-
-    if (text.length != 0) {
-        document.getElementById('text').value = encryptedText;
-        messageTitle.textContent = 'Successfully encrypted text';
-        paragraph.textContent = '';
-        greatEncrypted.src = './img/greatEncrypted.jpg';
-    } else {
-        greatEncrypted.src = './img/greatEncrypted.jpg';
-        messageTitle.textContent = 'No message found';
-        paragraph.textContent = 'Enter the text you want to encrypt or decrypt';
-        alert('Enter a text');
-    }
+  if (text.length != 0) {
+      document.getElementById("text").value = encryptedText;
+      TitleMessage.textContent = "Successfully encrypted text";
+      paragraph.textContent = "";
+      encryptedError.src = "./img/greatEncrypted.PNG";
+  } else {
+      encryptedError.src = "./img/encryptedError.PNG";
+      TitleMessage.textContent = "No message found";
+      paragraph.textContent = "Enter the text you want to encrypt or decrypt";
+      swal ( "Oops" ,  "Something went wrong!" ,  "error" )
+  }
 }
+
+function decrypt() {
+    let text = document.getElementById("text").value;
+    let TitleMessage = document.getElementById("TitleMessage");
+    let paragraph = document.getElementById("paragraph");
+    let encryptedError = document.getElementById("encryptedError");
+  
+    let encryptedText = text
+                            .replace(/enter/gi, "e")
+                            .replace(/imes/gi, "i")
+                            .replace(/ai/gi, "a")
+                            .replace(/ober/gi, "o")
+                            .replace(/ufat/gi, "u");
+    
+      if (text.length != 0) {
+        encryptedError.src = "./img/greatEncrypted.png"; // cambiar la imagen a una imagen diferente
+        document.getElementById("text").value = encryptedText;
+        TitleMessage.textContent = "Successfully decrypt text";
+        paragraph.textContent = "";
+        encryptedError.src = "./img/greatDecrypted.png";
+      } else {
+        encryptedError.src = "./img/encryptedError.png";
+        TitleMessage.textContent = "No message found";
+        paragraph.textContent = "Enter the text you want to encrypt or decrypt";
+        swal("Oops! Something went wrong","Enter text here");
+      }
+  }
