@@ -22,6 +22,7 @@ Text:  #333333  */
     background: #07ff530a;
 }
 .text {
+    text-indent: 20px;
     position: absolute;
     width: 42%;
     height: 60%;
@@ -33,7 +34,7 @@ Text:  #333333  */
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
-    background-color: #d4ebfbb3;
+    background-image: linear-gradient(to bottom, #d4ebfbb3, #add9f8b3);
     box-shadow: 0px 0px 20px 4px rgb(148 200 252);
     border-radius: 10px;
 }
@@ -42,6 +43,7 @@ textarea { /*para que sea estático y no pueda ser redimensionado por el usuario
 }
 .text::placeholder {
     color: #3333333b;
+    text-align: initial;
 }
 .text:hover {
   transition: 0.9s;
@@ -68,9 +70,9 @@ textarea { /*para que sea estático y no pueda ser redimensionado por el usuario
     font-weight: 400;
     font-size: 12px;
     position: relative;
-    top: -50px;
-    color: #6a6a6af0;
-    opacity: 0.8;
+    top: -55px;
+    left: 15px;
+    opacity: 0.4;
     order: 1;
     flex-grow: 0;
 }
@@ -111,7 +113,7 @@ textarea { /*para que sea estático y no pueda ser redimensionado por el usuario
     color: white;
   }
   body.light * {
-    color: #333333;
+    color: #333;
   }
 
   body.dark .footer {
@@ -123,13 +125,14 @@ textarea { /*para que sea estático y no pueda ser redimensionado por el usuario
   }
   
   body.dark .text {
-    background-color: #69b4ff;
-    box-shadow: 0px 0px 20px 11px rgb(105 180 255 / 22%);
+    background-image: linear-gradient(to bottom, #69b4ff, #69b4ffc9);
+    box-shadow: 0px 0px 20px 11px rgb(105 180 255 / 32%);
     border-radius: 10px;
   }
   
   body.dark .text::placeholder {
     color: #3333333b;
+    margin-left: 20px;
   }
   
   body.dark .btn-encrypt {
@@ -145,7 +148,8 @@ textarea { /*para que sea estático y no pueda ser redimensionado por el usuario
   }
   
   body.dark .encrypted {
-    background-color: #69b4ff2e;
+    background-image: linear-gradient(to bottom, #69b4ff2e, rgba(105, 180, 255, 0.514));
+    /*background-color: #69b4ff2e;*/
     box-shadow: 0px 0px 20px 4px rgb(48 143 213);
   }
   
@@ -175,7 +179,7 @@ textarea { /*para que sea estático y no pueda ser redimensionado por el usuario
     position: absolute;
     width: 70%;
     left: 15%;
-    top: 75%;
+    top: 74%;
 }
 .btn-encrypt {
     align-items: center;
