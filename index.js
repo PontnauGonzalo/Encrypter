@@ -54,13 +54,13 @@ function decrypt() {
                             .replace(/ufat/gi, "u");
     
       if (text.length != 0) {
-        encryptedError.src = "./img/greatEncrypted.png"; // cambiar la imagen a una imagen diferente
+        encryptedError.src = "./img/greatEncrypted.PNG"; // cambiar la imagen a una imagen diferente
         document.getElementById("text").value = encryptedText;
         TitleMessage.textContent = "Successfully decrypt text";
         paragraph.textContent = "";
-        encryptedError.src = "./img/greatDecrypted.png";
+        encryptedError.src = "./img/greatDecrypted.PNG";
       } else {
-        encryptedError.src = "./img/encryptedError.png";
+        encryptedError.src = "./img/encryptedError.PNG";
         TitleMessage.textContent = "No message found";
         paragraph.textContent = "Enter the text you want to encrypt or decrypt";
         swal("Oops! Something went wrong","Enter text here");
